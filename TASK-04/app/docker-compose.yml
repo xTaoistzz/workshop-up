@@ -1,0 +1,28 @@
+services:
+  app1:
+    image: xtaoi/todo-app:v1.0.1-maria-non-nginx
+    container_name: app1
+    ports:
+      - "3001:3000"
+    networks:
+      - todo-net
+
+  app2:
+    image: xtaoi/todo-app:v1.0.1-maria-non-nginx
+    container_name: app2
+    ports:
+      - "3002:3000"
+    networks:
+      - todo-net
+
+  app3:
+    image: xtaoi/todo-app:v1.0.1-maria-non-nginx
+    container_name: app3
+    ports:
+      - "3003:3000"
+    networks:
+      - todo-net
+
+networks:
+  todo-net:
+    external: true
