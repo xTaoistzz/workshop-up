@@ -1,7 +1,6 @@
 # SYSTEM 101 - 1 : Container is Isolated
 
 Workshop นี้มีวัตถุประสงค์เพื่อให้เข้าใจว่า **Container มี filesystem แยกจาก Host**
-การแก้ไขไฟล์ภายใน container จะหายไปทันทีเมื่อ container ถูกลบ
 
 ---
 
