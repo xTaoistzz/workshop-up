@@ -1,0 +1,9 @@
+services:
+  app1:
+    image: xtaoi/todo-app:v1.0.1-maria-non-nginx   # Image มี Nginx + Next.js ในตัวแล้ว
+    container_name: app1
+    ports:
+      - "3001:3000"              # Nginx port (ไม่ใช่ 3000 แล้ว)
+  networks:
+    todo-net:
+      name: todo-net
