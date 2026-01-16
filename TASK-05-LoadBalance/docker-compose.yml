@@ -11,5 +11,5 @@ services:
       - todo-net
 
 networks:
-  database-net:
+  todo-net:
     external: true

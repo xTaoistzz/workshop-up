@@ -1,3 +1,8 @@
+networks:
+  todo-net:
+    name: todo-net
+    driver: bridge
+
 services:
   app1:
     image: xtaoi/todo-app:v1.0.0-mariadb
@@ -13,7 +18,7 @@ services:
       NODE_ENV: production
     restart: unless-stopped
     networks:
-      - database-net
+      - todo-net
 
   app2:
     image: xtaoi/todo-app:v1.0.0-postgres
@@ -29,7 +34,7 @@ services:
       NODE_ENV: production
     restart: unless-stopped
     networks:
-      - database-net
+      - todo-net
 
   app3:
     image: xtaoi/todo-app:v1.0.0-mongodb
@@ -45,8 +50,4 @@ services:
       NODE_ENV: production
     restart: unless-stopped
     networks:
-      - database-net
-
-networks:
-  database-net:
-    external: true
+      - todo-net
