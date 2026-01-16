@@ -45,6 +45,9 @@ services:
 
       NODE_ENV: production
     restart: unless-stopped
+    depends_on:
+      - fluent-bit
+      - loki
     networks:
       - database-net
       
@@ -54,20 +57,24 @@ services:
     ports:
       - "3100:3100"
     volumes:
-      - ./loki-config.yml:/etc/loki/config.yml
-    command: -config.file=/etc/loki/config.yml
+      - ./loki-config.yml:/etc/loki/loki-config.yml:ro
+      - loki-data:/loki
+    command: -config.file=/etc/loki/loki-config.yml
     networks:
       - database-net
 
-  grafana:
-    image: grafana/grafana:10.2.0
-    container_name: grafana
-    ports:
-      - "3000:3000"
-    depends_on:
-      - loki
-    networks:
-      - database-net
+  # grafana:
+  #   image: grafana/grafana:10.2.0
+  #   container_name: grafana
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - loki
+  #   networks:
+  #     - database-net
+
+volumes:
+  loki-data:
 
 networks:
   database-net:

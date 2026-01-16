@@ -53,6 +53,12 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
     restart: unless-stopped
+    networks:
+      - database-net
 
 volumes:
   grafana-data:
+
+networks:
+  database-net:
+    external: true
