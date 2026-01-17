@@ -1,0 +1,6 @@
+services:
+  app-0X:
+    image: app:version
+    container_name: container_name
+    ports:
+      - external_port:internal_port
