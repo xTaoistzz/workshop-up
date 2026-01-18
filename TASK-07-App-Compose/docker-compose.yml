@@ -21,16 +21,16 @@ services:
       POSTGRES_PORT: 5432
 
       MONGO_HOST: mongo
-      MONGO_USER: 
-      MONGO_PASSWORD: 
-      MONGO_DATABASE: 
+      MONGO_USER: todo
+      MONGO_PASSWORD: secret
+      MONGO_DATABASE: todo_app
       MONGO_PORT: 27017
 
       NODE_ENV: production
     restart: unless-stopped
-    networks:
-      - database-net
+#     networks:
+#       - database-net
 
-networks:
-  database-net:
-    external: true
+# networks:
+#   database-net:
+#     external: true
