@@ -9,15 +9,15 @@ services:
       DB_TYPE: mongo
 
       MARIADB_HOST: mariadb
-      MARIADB_USER: 
-      MARIADB_PASSWORD: 
-      MARIADB_DATABASE: 
+      MARIADB_USER: todo
+      MARIADB_PASSWORD: secret
+      MARIADB_DATABASE: todo_app
       MARIADB_PORT: 3306
 
       POSTGRES_HOST: postgres
-      POSTGRES_USER: 
-      POSTGRES_PASSWORD: 
-      POSTGRES_DATABASE: 
+      POSTGRES_USER: todo 
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DATABASE: todo_app
       POSTGRES_PORT: 5432
 
       MONGO_HOST: mongo
